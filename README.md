@@ -16,7 +16,7 @@ This project is based on the NeurIPS 2024 paper:
 > *A Motion-aware Spatio-temporal Graph for Video Salient Object Ranking* [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html)
 
 The original released code focuses on the core model and evaluation logic, but lacks environment setup and trained model checkpoint.  
-This repository is created to **improve reproducibility, usability, and extensibility** for the research community.
+This repository is created to share the experience and **improve reproducibility, usability, and extensibility** for the research community.
 
 > ⚠️ **Disclaimer**  
 > This is **not an official repository** released by the original authors.
@@ -26,10 +26,83 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 
 ## 🎯 TODO
 
-- Detectron2 installation instructions
-- Environment setup steps
-- Upload model checkpoint.
+- [x] Detectron2 installation instructions (Feb 10, 2026)
+- [x] Environment setup steps (Feb 10, 2026)
+- [ ] Upload model checkpoint
+- [ ] ...
 
+## 🛠️ Environment Setup
+
+### Requirements
+
+- Linux or macOS with Python ≥ 3.6
+- PyTorch ≥ 1.3
+- torchvision version compatible with the installed PyTorch
+- OpenCV (optional, required for demos and visualization)
+- GCC & G++ ≥ 5
+
+### ✅ Tested Environment
+
+The following configuration has been tested successfully:
+
+- OS: Ubuntu 22.04
+- GPU: NVIDIA RTX 4090 / 4090D (Ada Lovelace)
+- Python: 3.10
+- PyTorch: 2.1.0
+- CUDA: 12.1
+
+### Build from Source
+
+```bash
+git clone https://github.com/ruisong8/VSOR-repro.git
+cd VSOR-repro
+```
+
+> **Important Note**  
+> If you clone from the **official VSOR repository** instead of this fork,  
+> precompiled Detectron2 binaries may be present and must be removed before building.
+
+To check for existing build artifacts, run:
+
+```bash
+find . -name "build" -type d -prune
+find . -name "*.so" -path "*detectron2*" -print
+```
+
+If any Detectron2 shared objects are found, clean them with:
+
+```bash
+rm -f detectron2/_C.cpython-37m-*.so detectron2/_C.cpython-38-*.so
+rm -rf detectron2.egg-info build
+```
+
+Build Detectron2 from source:
+
+```bash
+python -m pip install -e .
+```
+
+### Verification
+After installation, verify that Detectron2 and its native extension are correctly loaded:
+
+```bash
+python - <<'EOF'
+import torch
+import detectron2
+from detectron2 import _C
+
+print("PyTorch:", torch.__version__)
+print("CUDA:", torch.version.cuda)
+print("Detectron2 path:", detectron2.__file__)
+print("C++ extension:", _C.__file__)
+EOF
+```
+
+You will see output similar to:
+```bash
+_C.cpython-310-x86_64-linux-gnu.so
+```
+which should match your Python version.
 
 ## 📊 Datasets
 
