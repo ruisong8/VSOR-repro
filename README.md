@@ -65,8 +65,8 @@ cd VSOR-repro
 To check for existing build artifacts, run:
 
 ```bash
-find . -name "build" -type d -prune
 find . -name "*.so" -path "*detectron2*" -print
+find . -name "build" -type d -prune
 ```
 
 If any Detectron2 shared objects are found, clean them with:
