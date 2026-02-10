@@ -59,7 +59,7 @@ cd VSOR-repro
 ```
 
 > **Important Note**  
-> If you clone from the **official VSOR repository** instead of this fork,  
+> If you clone from the **official VSOR repository** instead of this fork,
 > precompiled Detectron2 binaries may be present and must be removed before building.
 
 To check for existing build artifacts, run:
@@ -73,7 +73,7 @@ If any Detectron2 shared objects are found, clean them with:
 
 ```bash
 rm -f detectron2/_C.cpython-37m-*.so detectron2/_C.cpython-38-*.so
-rm -rf detectron2.egg-info build
+rm -rf build/ detectron2.egg-info build
 ```
 
 Build Detectron2 from source:
