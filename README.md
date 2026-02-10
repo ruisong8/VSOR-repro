@@ -4,7 +4,6 @@
 </div>
 
 > **Status:** 🚧 Under active development  
-> This repository is a **community-maintained reproduction and extension** of the VSOR project.  
 > Environment setup, training scripts, and pretrained models will be continuously updated.
 
 ---
@@ -38,7 +37,7 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - Linux with Python ≥ 3.6
 - PyTorch ≥ 1.3
 - torchvision version compatible with the installed PyTorch
-- OpenCV (optional, required for demos and visualization)
+- OpenCV (optional, required for visualization)
 - GCC & G++ ≥ 5
 
 ### ✅ Tested Environment
@@ -82,27 +81,6 @@ Build Detectron2 from source:
 python -m pip install -e .
 ```
 
-### Verification
-After installation, verify that Detectron2 and its native extension are correctly loaded:
-
-```bash
-python - <<'EOF'
-import torch
-import detectron2
-from detectron2 import _C
-
-print("PyTorch:", torch.__version__)
-print("CUDA:", torch.version.cuda)
-print("Detectron2 path:", detectron2.__file__)
-print("C++ extension:", _C.__file__)
-EOF
-```
-
-You will see output similar to:
-```bash
-_C.cpython-310-x86_64-linux-gnu.so
-```
-which should match your Python version.
 
 ## 📊 Datasets
 
