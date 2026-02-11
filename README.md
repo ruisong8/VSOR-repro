@@ -78,6 +78,7 @@ rm -rf build/ detectron2.egg-info build
 Build Detectron2 from source:
 
 ```bash
+pip install -r requirements.txt
 python -m pip install -e .
 ```
 
