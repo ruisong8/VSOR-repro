@@ -1,0 +1,8 @@
+instaboostfast==0.1.2
+einops
+pandas
+scikit-learn
+
+# hard compatibility pins
+Pillow<10
+scikit-image<0.25
