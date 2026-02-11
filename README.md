@@ -38,7 +38,6 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - Linux with Python ≥ 3.6
 - PyTorch ≥ 1.3
 - torchvision version compatible with the installed PyTorch
-- OpenCV (optional, required for visualization)
 - GCC & G++ ≥ 5
 
 ### ✅ Tested Environment
