@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project is based on the NeurIPS 2024 paper:
 
@@ -23,7 +23,7 @@ This repository is created to share the experience and **improve reproducibility
 Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 
 
-## 🎯 TODO
+## TODO
 
 - [x] Upload Cleaned detectron2 (Feb 9, 2026)
 - [x] Detectron2 installation instructions (Feb 10, 2026)
@@ -31,7 +31,7 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [ ] Upload model checkpoint
 - [ ] ...
 
-## 🛠️ Environment Setup
+## Environment Setup
 
 ### Requirements
 
@@ -83,7 +83,7 @@ python -m pip install -e .
 ```
 
 
-## 📊 Datasets
+## Datasets
 
 - **RVSOD**  
   https://github.com/Pchank/Ranking-Video-Salient-Object-Detection
@@ -92,6 +92,6 @@ python -m pip install -e .
   Coming soon
 
 
-## 🤝 Acknowledgment
+## Acknowledgment
 
 The project is based on VSOR ([Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html), [Code](https://github.com/zyf-815/VSOR)), [Detectron2](https://github.com/facebookresearch/detectron2).
