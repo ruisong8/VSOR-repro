@@ -75,9 +75,36 @@ class DatasetMapper(object):
             if isinstance(segm, list):
                 return segm
 
+            # if isinstance(segm, dict):
+            #     h, w = segm['size']
+            #     rle = mask_utils.frPyObjects(segm, h, w)
+            #     mask = mask_utils.decode(rle)
+            #     contour, hierarchy = cv2.findContours(
+            #         mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_TC89_L1
+            #     )
+            #     reshaped_contour = []
+            #     for entity in contour:
+            #         assert len(entity.shape) == 3
+            #         assert (
+            #                 entity.shape[1] == 1
+            #         ), "Hierarchical contours are not allowed"
+            #         if entity.shape[0] >= 3:
+            #             reshaped_contour.append(entity.reshape(-1).tolist())
+            #     assert len(reshaped_contour)
+            #     return reshaped_contour
+
             if isinstance(segm, dict):
-                h, w = segm['size']
-                rle = mask_utils.frPyObjects(segm, h, w)
+                h, w = segm["size"]
+            
+                # segm may be:
+                # 1) compressed RLE from mask_utils.encode: {"size":[h,w], "counts": bytes}
+                # 2) uncompressed RLE: {"size":[h,w], "counts": [int, int, ...]}
+                if isinstance(segm.get("counts"), (bytes, bytearray)):
+                    rle = segm
+                else:
+                    # uncompressed -> convert to compressed RLE first
+                    rle = mask_utils.frPyObjects(segm, h, w)
+            
                 mask = mask_utils.decode(rle)
                 contour, hierarchy = cv2.findContours(
                     mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_TC89_L1
@@ -85,13 +112,12 @@ class DatasetMapper(object):
                 reshaped_contour = []
                 for entity in contour:
                     assert len(entity.shape) == 3
-                    assert (
-                            entity.shape[1] == 1
-                    ), "Hierarchical contours are not allowed"
+                    assert entity.shape[1] == 1, "Hierarchical contours are not allowed"
                     if entity.shape[0] >= 3:
                         reshaped_contour.append(entity.reshape(-1).tolist())
                 assert len(reshaped_contour)
                 return reshaped_contour
+
 
         segms = [rle_to_polygon(segm) for segm in segms]  
         masks = PolygonMasks(segms)
