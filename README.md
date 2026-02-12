@@ -89,7 +89,7 @@ python -m pip install -e .
   https://github.com/Pchank/Ranking-Video-Salient-Object-Detection
 
 - **DAVSOR**  
-  Update soon
+  Coming soon
 
 
 ## 🤝 Acknowledgment
