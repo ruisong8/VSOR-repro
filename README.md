@@ -97,9 +97,9 @@ python -m pip install -e .
 1. Download the pretrained model pre_model.pth from [Google Drive](https://drive.google.com/file/d/189II7BcY5Bn6CAxV1AHcjX-5ktRAwSGE/view?usp=sharing) or [Saliency-Ranking](https://github.com/dragonlee258079/Saliency-Ranking) and place it into the ``model/`` directory.
 
 2. Run:
-'''
+```
 python tools/plain_train_net_our.py
-'''
+```
 
 
 ## Acknowledgment
