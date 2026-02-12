@@ -47,9 +47,10 @@ MODEL:
 DATASETS:
   # TRAIN: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/Train.pkl",)
   # TEST: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/test_ff.pkl",)
-  TRAIN: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/ranks_SPKL/train.pkl",)
+  # TRAIN: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/ranks_SPKL/train.pkl",)
+  TRAIN: ("Dataset/RVSOD/RVSOD/train.pkl",)
   #TRAIN: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/new_pkl/not_all/train_rank.pkl",)
-  TEST: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/ranks_SPKL/test.pkl",)
+  TEST: ("Dataset/RVSOD/RVSOD/test.pkl",)
   # TRAIN: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/<20SPKL/train.pkl",)
   # TEST: ("/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/<20SPKL/test.pkl",)
 SOLVER:
@@ -67,4 +68,4 @@ TEST:
 INPUT:
   MIN_SIZE_TRAIN: (640, 672, 704, 736, 768, 800)
 VERSION: 2
-OUTPUT_DIR: '/data/zyf/VSOR'
+OUTPUT_DIR: 'output'
