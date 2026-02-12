@@ -14,7 +14,8 @@ This project is based on the NeurIPS 2024 paper:
 
 > *A Motion-aware Spatio-temporal Graph for Video Salient Object Ranking* [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html)
 
-The original released code focuses on the core model and evaluation logic, but lacks environment setup and trained model checkpoint.  
+Thanks to the authors for releasing their code.
+The original released code focuses on the core model and evaluation logic, but lacks the environment, dataset preparation and trained model checkpoint. And their code cannot run directly
 This repository is created to share the experience and **improve reproducibility, usability, and extensibility** for the research community.
 
 > ⚠️ **Disclaimer**  
