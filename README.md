@@ -15,7 +15,9 @@ This project is based on the NeurIPS 2024 paper:
 > *A Motion-aware Spatio-temporal Graph for Video Salient Object Ranking* [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html)
 
 Thanks to the authors for releasing their code.
-The original released code focuses on the core model and evaluation logic, but lacks the environment, dataset preparation and trained model checkpoint. And their code cannot run directly
+
+The original released code focuses on the core model, but lacks the environment, dataset preparation and trained model checkpoint. And their code cannot run directly.
+
 This repository is created to share the experience and **improve reproducibility, usability, and extensibility** for the research community.
 
 > ⚠️ **Disclaimer**  
@@ -29,10 +31,10 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [x] Upload Cleaned detectron2 (Feb 9, 2026)
 - [x] Detectron2 installation instructions (Feb 10, 2026)
 - [x] Environment setup steps (Feb 10, 2026)
-- [x] Revise training model (Feb 13, 2026)
+- [x] Revise training code (Feb 13, 2026)
 - [ ] Upload revised dataset
 - [ ] Upload model checkpoint
-- [ ] Revise inference model
+- [ ] Revise inference code
 - [ ] ...
 
 ## Environment Setup
