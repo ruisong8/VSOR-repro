@@ -42,7 +42,9 @@ class davis_val(Dataset):
         self.load_proposals = False
 
         self.is_train = is_train
-        self.video_dir = '/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/ranks_SPKL/test.pkl'
+        self.video_dir = 'Dataset/RVSOD/RVSOD/test.pkl'
+        
+        # self.video_dir = '/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/ranks_SPKL/test.pkl'
 
         #self.video_dir = '/home/zyf/code/Saliency-Ranking-main/dataset/RVSOD/RVSOD/ranks_SPKL/train.pkl'
 
