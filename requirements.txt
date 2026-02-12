@@ -1,4 +1,5 @@
 instaboostfast==0.1.2
+numpy==1.23.5
 einops
 pandas
 scikit-learn
