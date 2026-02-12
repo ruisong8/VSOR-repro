@@ -92,6 +92,16 @@ python -m pip install -e .
   Coming soon
 
 
+## Training
+
+1. Download the pretrained model pre_model.pth from [Google Drive](https://drive.google.com/file/d/189II7BcY5Bn6CAxV1AHcjX-5ktRAwSGE/view?usp=sharing) or [Saliency-Ranking](https://github.com/dragonlee258079/Saliency-Ranking) and place it into the ``model/`` directory.
+
+2. Run:
+'''
+python tools/plain_train_net_our.py
+'''
+
+
 ## Acknowledgment
 
 The project is based on VSOR ([Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html), [Code](https://github.com/zyf-815/VSOR)), [Detectron2](https://github.com/facebookresearch/detectron2).
