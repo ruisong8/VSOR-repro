@@ -28,7 +28,10 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [x] Upload Cleaned detectron2 (Feb 9, 2026)
 - [x] Detectron2 installation instructions (Feb 10, 2026)
 - [x] Environment setup steps (Feb 10, 2026)
+- [x] Revise training model (Feb 13, 2026)
+- [ ] Upload revised dataset
 - [ ] Upload model checkpoint
+- [ ] Revise inference model
 - [ ] ...
 
 ## Environment Setup
