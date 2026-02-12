@@ -63,7 +63,7 @@ def default_argument_parser():
         PathManager.mkdirs(out_dir)
 
     parser = argparse.ArgumentParser(description="Detectron2 Training")
-    parser.add_argument("--config-file", default="../configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
+    parser.add_argument("--config-file", default="configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml",
                         metavar="FILE", help="path to config file")
     parser.add_argument(
         "--resume",
