@@ -81,11 +81,24 @@ class davis_val(Dataset):
             rles = mask_utils.frPyObjects(polygons, height, width)
             rle = mask_utils.merge(rles)
             return mask_utils.decode(rle).astype(np.uint8)
+        # if isinstance(polygons, dict):
+        #     h, w = polygons['size']
+        #     rle = mask_utils.frPyObjects(polygons, h, w)
+        #     mask = mask_utils.decode(rle)
+        #     return mask
         if isinstance(polygons, dict):
-            h, w = polygons['size']
-            rle = mask_utils.frPyObjects(polygons, h, w)
-            mask = mask_utils.decode(rle)
-            return mask
+            h, w = polygons["size"]
+        
+            # polygons may be:
+            # - compressed RLE from mask_utils.encode: {"size":[h,w], "counts": bytes}
+            # - uncompressed RLE: {"size":[h,w], "counts": [int, ...]}
+            if isinstance(polygons.get("counts"), (bytes, bytearray)):
+                rle = polygons
+            else:
+                rle = mask_utils.frPyObjects(polygons, h, w)
+        
+            return mask_utils.decode(rle).astype(np.uint8)
+
 
     def __getitem__(self, idx):
         
