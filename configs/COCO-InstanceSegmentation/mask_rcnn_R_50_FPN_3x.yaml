@@ -1,6 +1,7 @@
 _BASE_: "../Base-RCNN-FPN.yaml"
 MODEL:
-  WEIGHTS: "/home/zyf/code/Saliency-Ranking-main/model/pre_model.pth"
+  WEIGHTS: "model/pre_model.pth"
+  # WEIGHTS: "/home/zyf/code/Saliency-Ranking-main/model/pre_model.pth"
   #WEIGHTS: "/home/zyf/code/Saliency-Ranking-main/tools/Rank_Saliency/Models/RVSOR(52)/model_0019999.pth"
   #WEIGHTS: "/home/zyf/code/Saliency-Ranking-main/tools/Rank_Saliency/Models/RVSOR(2)/model_final.pth"
   #WEIGHTS: "/home/zyf/code/Saliency-Ranking-main/tools/Rank_Saliency/Models/RVSOR(3)/model_final.pth"
