@@ -88,12 +88,8 @@ python -m pip install -e .
 - **RVSOD**  
   https://github.com/Pchank/Ranking-Video-Salient-Object-Detection
 
-- **DAVSOD**  
-  https://github.com/DengPingFan/DAVSOD
-
-The official train/test split for DAVSOD can be found in:
-`Dataset/DAVSOD/train.txt`
-`Dataset/DAVSOD/test.txt`
+- **DAVSOR**  
+  Update soon
 
 
 ## 🤝 Acknowledgment
