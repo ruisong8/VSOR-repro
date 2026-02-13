@@ -98,7 +98,7 @@ python -m pip install -e .
   Download our revised dataset through [Google Drive](https://drive.google.com/file/d/1eH-wHzw4CPmIg88vTXqP4GuAUNhmtpKU/view?usp=sharing) and extract it to `/Dataset`.
   
   #### Option 2
-  1. Download from the [official website](https://github.com/Pchank/Ranking-Video-Salient-Object-Detection) and extract it to `/Dataset`.
+  1. Download from the [official repository](https://github.com/Pchank/Ranking-Video-Salient-Object-Detection) and extract it to `/Dataset`.
   2. Run `python tools/fix_gt_size_inplace.py` to fix the gt images with the wrong size (you can see them through `python tools/audit_rvsod_rank_masks.py`).
   3. Run `python tools/make_pkl_from_maskpng.py` to generate `train.pkl` and `test.pkl`.
 
