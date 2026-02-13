@@ -32,7 +32,7 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [x] Detectron2 installation instructions (Feb 10, 2026)
 - [x] Environment setup steps (Feb 10, 2026)
 - [x] Revise training code (Feb 13, 2026)
-- [ ] Upload revised dataset
+- [x] Upload revised dataset (Feb 13, 2026)
 - [ ] Upload model checkpoint
 - [ ] Revise inference code
 - [ ] ...
@@ -91,11 +91,19 @@ python -m pip install -e .
 
 ## Datasets
 
-- **RVSOD**  
-  https://github.com/Pchank/Ranking-Video-Salient-Object-Detection
+### RVSOD
 
-- **DAVSOR**  
-  Coming soon
+  #### Option 1
+  
+  Download our revised dataset through [Google Drive](https://drive.google.com/file/d/1eH-wHzw4CPmIg88vTXqP4GuAUNhmtpKU/view?usp=sharing) and extract it to `/Dataset`.
+  
+  #### Option 2
+  1. Download from the [official website](https://github.com/Pchank/Ranking-Video-Salient-Object-Detection) and extract it to `/Dataset`.
+  2. Run `python tools/fix_gt_size_inplace.py` to fix the gt images with the wrong size (you can see them through `python tools/audit_rvsod_rank_masks.py`).
+  3. Run `python tools/make_pkl_from_maskpng.py` to generate `train.pkl` and `test.pkl`.
+
+### DAVSOR
+  Coming soon.
 
 
 ## Training
