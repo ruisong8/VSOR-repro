@@ -24,7 +24,6 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 
 ## TODO
 
-- [x] Upload Cleaned detectron2 (Feb 9, 2026)
 - [x] Detectron2 installation instructions (Feb 10, 2026)
 - [x] Environment setup steps (Feb 10, 2026)
 - [x] Revise training code (Feb 13, 2026)
@@ -133,11 +132,11 @@ to obtain the quantification results only.
 |:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:--------------:|
 | RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.0698 |
 
-You can download the [checkpoint](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing), [config](https://drive.google.com/file/d/1BsOBaihtC7Rv4LoHU4qH3EnCEBmFa-N7/view?usp=sharing), [log
-](https://drive.google.com/file/d/1ZH3PZiLFVKyTKCPNb7QMVshS80MzcL8L/view?usp=sharing), [TB log](https://drive.google.com/file/d/1jaGgXU17HLTDDLlL_QiwB7wjybFiSmHt/view?usp=sharing).
+You can download the [checkpoint](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing), [Predicted Images](https://drive.google.com/file/d/1A7wPZRZ5qlZ-rOI568Vutxug8jYMNb-Y/view?usp=sharing), [config](https://drive.google.com/file/d/1BsOBaihtC7Rv4LoHU4qH3EnCEBmFa-N7/view?usp=sharing), [log
+](https://drive.google.com/file/d/1ZH3PZiLFVKyTKCPNb7QMVshS80MzcL8L/view?usp=sharing), and [TB log](https://drive.google.com/file/d/1jaGgXU17HLTDDLlL_QiwB7wjybFiSmHt/view?usp=sharing).
 
-For more discussion about the result, please see [this](assets/readme.md).
+For more discussion about the result, please refer to [this](assets/readme.md) (Uploading soon).
 
 ## Acknowledgment
 
-The project is based on VSOR ([Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html), [Code](https://github.com/zyf-815/VSOR)), [Detectron2](https://github.com/facebookresearch/detectron2), Saliency-Ranking ([Paper](https://ieeexplore.ieee.org/iel7/34/4359286/09523772.pdf), [Code](https://github.com/dragonlee258079/Saliency-Ranking)).
+The project is based on VSOR ([Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html), [Code](https://github.com/zyf-815/VSOR)), Saliency-Ranking ([Paper](https://ieeexplore.ieee.org/iel7/34/4359286/09523772.pdf), [Code](https://github.com/dragonlee258079/Saliency-Ranking)), and [Detectron2](https://github.com/facebookresearch/detectron2).
