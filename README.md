@@ -134,9 +134,9 @@ to obtain the quantification results only.
 
 ## Result
 
-| Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | MAE (SOD) | MAE (SOR) |
-|:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:---------:|:---------:|
-| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.0668 | 0.0653 |
+| Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | SASOR (Reported) | MAE (SOD) | MAE (SOR) | MAE (Reported) |
+|:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:--------------:|
+| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.0698 |
 
 ## Acknowledgment
 
