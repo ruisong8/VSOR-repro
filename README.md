@@ -115,6 +115,28 @@ python -m pip install -e .
 python tools/plain_train_net_our.py
 ```
 
+3. The log and checkpoint will be saved in ``RankSaliency/``.
+
+## Testing
+
+1. Download the trained model from Google Drive and place it into the ``RankSaliency/Models/RVSOD(1)/`` directory.
+
+2. Run:
+```
+python tools/DrawFianlFigure.py
+```
+to obtain the quantification results and predicted images.
+Or run:
+```
+python tools/plain_test_net.py
+```
+to obtain the quantification results only.
+
+## Result
+
+| Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | MAE (SOD) | MAE (SOR) |
+|---------|------------------|------------------------|-------------|-------------------|-----------|-----------|
+| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.0668 | 0.0653 |
 
 ## Acknowledgment
 
