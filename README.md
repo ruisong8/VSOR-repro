@@ -3,10 +3,6 @@
 <h3> An UNOFFICIAL reproducible and extensible implementation version</h3>
 </div>
 
-> **Status:** 🚧 Under active development  
-> Environment setup, training scripts, and pretrained models will be continuously updated.
-
----
 
 ## Overview
 
@@ -35,7 +31,6 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [x] Upload revised dataset (Feb 13, 2026)
 - [x] Revise inference code (Feb 20, 2026)
 - [x] Upload model checkpoint (Feb 21, 2026)
-- [ ] ...
 
 ## Environment Setup
 
