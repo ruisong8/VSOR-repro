@@ -140,4 +140,4 @@ For more discussion about the result, please see [this](assets/readme.md).
 
 ## Acknowledgment
 
-The project is based on VSOR ([Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html), [Code](https://github.com/zyf-815/VSOR)), [Detectron2](https://github.com/facebookresearch/detectron2).
+The project is based on VSOR ([Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html), [Code](https://github.com/zyf-815/VSOR)), [Detectron2](https://github.com/facebookresearch/detectron2), Saliency-Ranking ([Paper](https://ieeexplore.ieee.org/iel7/34/4359286/09523772.pdf), [Code](https://github.com/dragonlee258079/Saliency-Ranking)).
