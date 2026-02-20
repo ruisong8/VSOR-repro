@@ -85,9 +85,7 @@ def evalu(results, iou_thread):
         # result_dir = r'D:\dataset\salient_instance\SOC6K\soc_rank_saliency\test\result'
         # cv2.imwrite(os.path.join(result_dir, '{}.png'.format(name)), all_segmaps)
 
-        #if name != 'COCO_val2014_000000202998.jpg':
-        #    continue
-
+        # IMPORTANT: remove img with num(instance)=1
         if len(gt_ranks) ==1 :
             num=num-1
             continue
