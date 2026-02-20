@@ -34,7 +34,7 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [x] Revise training code (Feb 13, 2026)
 - [x] Upload revised dataset (Feb 13, 2026)
 - [x] Revise inference code (Feb 20, 2026)
-- [ ] Upload model checkpoint
+- [x] Upload model checkpoint (Feb 21, 2026)
 - [ ] ...
 
 ## Environment Setup
@@ -119,7 +119,7 @@ python tools/plain_train_net_our.py
 
 ## Testing
 
-1. Download the trained model from Google Drive and place it into the ``RankSaliency/Models/RVSOD(1)/`` directory.
+1. Download the trained model from [Google Drive](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing) and place it into the ``RankSaliency/Models/RVSOD(1)/`` directory.
 
 2. Run:
 ```
@@ -137,6 +137,11 @@ to obtain the quantification results only.
 | Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | SASOR (Reported) | MAE (SOD) | MAE (SOR) | MAE (Reported) |
 |:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:--------------:|
 | RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.0698 |
+
+You can download the [checkpoint](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing), [config](https://drive.google.com/file/d/1BsOBaihtC7Rv4LoHU4qH3EnCEBmFa-N7/view?usp=sharing), [log
+](https://drive.google.com/file/d/1ZH3PZiLFVKyTKCPNb7QMVshS80MzcL8L/view?usp=sharing), [TB log](https://drive.google.com/file/d/1jaGgXU17HLTDDLlL_QiwB7wjybFiSmHt/view?usp=sharing).
+
+For more discussion about the result, please see [this](assets/readme.md).
 
 ## Acknowledgment
 
