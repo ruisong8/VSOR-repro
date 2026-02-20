@@ -1,5 +1,5 @@
 <div align="center">
-<h1>VSOR (NeurIPS 2024)</h1>
+<h1>A Motion-aware Spatio-temporal Graph for Video Salient Object Ranking (NeurIPS 2024)</h1>
 <h3> An UNOFFICIAL reproducible and extensible implementation version</h3>
 </div>
 
