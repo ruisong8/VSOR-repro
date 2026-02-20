@@ -33,8 +33,8 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 - [x] Environment setup steps (Feb 10, 2026)
 - [x] Revise training code (Feb 13, 2026)
 - [x] Upload revised dataset (Feb 13, 2026)
+- [x] Revise inference code (Feb 20, 2026)
 - [ ] Upload model checkpoint
-- [ ] Revise inference code
 - [ ] ...
 
 ## Environment Setup
