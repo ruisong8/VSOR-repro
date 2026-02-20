@@ -141,8 +141,8 @@ def main(args):
     # model_root_dir = "./Rank_Saliency/Models/RVSOR(41)"
     # model_names = ['model_0009999.pth']
 
-    model_root_dir = "./Rank_Saliency/Models/RVSOR(35)"
-    model_names = ['model_0089999.pth']
+    model_root_dir = "./Rank_Saliency/Models/RVSOR(1)"
+    model_names = ['model_0099999.pth']
 
     # model_root_dir = "./Rank_Saliency/Models/RVSOR(52)"
     # model_names = ['model_0019999.pth']
