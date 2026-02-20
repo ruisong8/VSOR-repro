@@ -60,16 +60,37 @@ def inference(cfg, model,draw=False):
                 image_shape = inputs[0][1]["image_shape"]
                 #binary_mask=outputs['binary_result'].squeeze(0).squeeze(0)
                  
-                pred_boxes = outputs["roi_results"][0].pred_boxes
-                pred_boxes = pred_boxes.tensor.cpu().data.numpy()
-                scores = outputs["roi_results"][0].scores
-                scores = scores.cpu().data.numpy()
-                pred_masks = outputs["roi_results"][0].pred_masks
-                pred_masks = pred_masks.cpu().data.numpy()
-
-                saliency_rank = outputs["rank_result"][0].cpu().data.numpy()
-
+                inst = outputs["roi_results"][0]
+                H, W = inputs[0][1]["image_shape"]
                 
+                # Default: empty predictions
+                pred_boxes = np.zeros((0, 4), dtype=np.float32)
+                scores = np.zeros((0,), dtype=np.float32)
+                pred_masks = np.zeros((0, 1, 1, 1), dtype=np.float32)  # placeholder
+                saliency_rank = np.zeros((0,), dtype=np.float32)
+                
+                has_any_pred = (len(inst) > 0)
+                has_masks = has_any_pred and inst.has("pred_masks")
+                
+                if has_any_pred:
+                    pred_boxes = inst.pred_boxes.tensor.cpu().numpy()
+                    scores = inst.scores.cpu().numpy()
+                
+                # rank_result is aligned with instances; guard it too
+                if "rank_result" in outputs and len(outputs["rank_result"]) > 0 and has_any_pred:
+                    saliency_rank = outputs["rank_result"][0].detach().cpu().numpy()
+                
+                # pred_masks may be absent when no detections or mask head not run
+                if has_masks:
+                    pred_masks = inst.pred_masks.detach().cpu().numpy()
+                else:
+                    # keep pred_masks as empty; we will handle it downstream
+                    pred_masks = np.zeros((0, 1, 1, 1), dtype=np.float32)
+
+
+                # print(gt_ranks)
+                # print(saliency_rank)
+                # assert False
 
                 pred = {}
                 pred["pred_boxes"] = pred_boxes
@@ -84,7 +105,7 @@ def inference(cfg, model,draw=False):
                 # print(saliency_rank)
 
                 #only keep the box and masks which have score>0.6
-                AVE=sum(scores)/len(scores)
+                AVE = (scores.mean() if len(scores) else 0.0)
                 threshold=0.6
                 keep = scores > threshold
                 pred_boxes = pred_boxes[keep, :]
@@ -180,7 +201,9 @@ def inference(cfg, model,draw=False):
                         cv2.rectangle(img_draw_pre_boxes, (x0,y0), (x1,y1), color=box_color, thickness=2)
                     
                     imgs_c=np.hstack([img_draw_gt_boxes,img_draw_pre_boxes])
-                    cv2.imwrite('/home/zyf/code/Saliency-Ranking-main/tools/draw_box/'+img_name.split('/')[-1], imgs_c)
+                    os.makedirs('draw_box', exist_ok=True)
+                    success = cv2.imwrite('draw_box/'+img_name.split('/')[-1], imgs_c)
+                    assert success
 
             #if draw and len(gt_boxes)>1:
 
@@ -219,7 +242,8 @@ def inference(cfg, model,draw=False):
                         segmaps[j, y0:y1, x0:x1] = segmap
 
                     segmaps1 = copy.deepcopy(segmaps)
-                    all_segmaps = np.zeros_like(gt_masks[0], dtype=np.float)
+                    all_segmaps = np.zeros((image_shape[0], image_shape[1]), dtype=np.float32)
+                    
                     if len(pred_masks) != 0:
                         color_index = [sorted(saliency_rank).index(a) + 1 for a in saliency_rank]
                         color = [255. / len(saliency_rank) * a for a in color_index]
@@ -228,27 +252,37 @@ def inference(cfg, model,draw=False):
                             obj_id = color_index.index(k)
                             seg = segmaps1[obj_id]
                             seg[seg >= 0.5] = color[obj_id]
-                            #seg[seg >= 0.5] = 255.0
                             seg[seg < 0.5] = 0
                             seg[cover_region] = 0
                             all_segmaps += seg
                             cover_region = all_segmaps != 0
-                        all_segmaps = all_segmaps.astype(np.int)
-                    #cv2.imwrite('/home/zyf/code/Saliency-Ranking-main/tools/draw_mask/'+str(i)+'.jpg', all_segmaps)
+                    
+                    # convert to uint8 for saving
+                    gt_map_u8 = np.clip(gt_map, 0, 255).astype(np.uint8)
+                    pred_u8 = np.clip(all_segmaps, 0, 255).astype(np.uint8)
+                    
+                    imgs_d = np.hstack([gt_map_u8, pred_u8])
+                    
+                    base = img_name.split('/')[-1].replace('jpg', 'png')
+                    
+                    # os.makedirs('draw_mask', exist_ok=True)
+                    # assert cv2.imwrite('draw_mask/' + base, imgs_d)       # GT|Pred
+                    
+                    os.makedirs('pred_mask', exist_ok=True)
+                    assert cv2.imwrite('pred_mask/' + base, pred_u8)      # pred
+                    
+                    os.makedirs('gt_mask', exist_ok=True)
+                    assert cv2.imwrite('gt_mask/' + base, gt_map_u8)      # gt
 
-                    imgs_d=np.hstack([gt_map,all_segmaps])           
-                    cv2.imwrite('/home/zyf/code/Saliency-Ranking-main/tools/draw_mask/'+img_name.split('/')[-1].replace('jpg','png'), all_segmaps)
 
-                    # imgs_r=np.vstack([imgs_c,imgs_d])
-                    # cv2.imwrite('/home/zyf/code/Saliency-Ranking-main/tools/draw_res_epoch1/'+img_name.split('/')[-1], imgs_r)
-
-            except:
+            except Exception as e:
                 no_figure+=1
                 print(inputs[0][1]["file_name"].split('/')[-1])
 
                 # res_mae.append({'gt_masks': gt_masks, 'segmaps': np.zeros([len(pred_masks), image_shape[0], image_shape[1]]), 'scores': [0], 'gt_ranks': gt_ranks,
                 #             'rank_scores': [0], 'img_name': name,'gt_boxes':gt_boxes})
-                continue
+                raise
+        
         # lst=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
         # for k in lst:
         #     r_corre = rank_evalu(res, k)
