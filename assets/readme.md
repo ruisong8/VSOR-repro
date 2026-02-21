@@ -54,7 +54,10 @@ This version of MAE is affected by ranking quality.
 MAE(SOD) is more consistent with the original baseline implementation and is likely the metric reported in the paper.
 
 
-# Contact
+# Others
+
+In this repository, if no instance is predicted for an image, a black (empty) mask will be generated and included in the evaluation. In contrast, the original implementation skips such images entirely. This difference leads to a minor performance variation (approximately 0.1%), since only a very small number of images contain no predictions.
+
 
 For further discussion, please open an issue or contact:
 
