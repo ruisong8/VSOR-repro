@@ -24,7 +24,7 @@ In this project:
 
 SASOR is a correlation-based metric with range $[-1, 1]$ where 1 represents perfect positive correlation and 0 represents no correlation. To make the metric more intuitive and easier to interpret as a "score", we normalize it to: $\text{Norm.\ SASOR} = \frac{\text{SASOR} + 1}{2}$. This converts it into a percentage-like scale in the range $[0, 1]$, which is more intuitive for reporting.
 
-## Which Version Did the Authors Use in their paper, SASOR(Reported)?
+## Which Version Did the Authors Use? (SASOR(Reported))
 
 Unfortunately, it is unclear which version was used in the original paper.
 
@@ -49,7 +49,7 @@ In RVSOD, pixel values represent ranking relationships rather than absolute sali
 
 This version of MAE is affected by ranking quality.
 
-## Which did the authors use in their paper, MAE(Reported)?
+## Which MAE Did the Authors Use? (MAE(Reported))
 
 MAE(SOD) is more consistent with the original baseline implementation and is likely the metric reported in the paper.
 
@@ -58,4 +58,4 @@ MAE(SOD) is more consistent with the original baseline implementation and is lik
 
 For further discussion, please open an issue or contact:
 
-**ruisong8-c@my.cityu.edu.hk**
+ruisong8-c@my.cityu.edu.hk
