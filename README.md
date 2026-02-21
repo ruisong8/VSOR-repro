@@ -45,7 +45,7 @@ Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 The following configuration has been tested successfully:
 
 - OS: Ubuntu 22.04
-- GPU: NVIDIA RTX 4090 / 4090D (Ada Lovelace)
+- GPU: NVIDIA RTX 4090 / 4090D
 - Python: 3.10
 - PyTorch: 2.1.0
 - CUDA: 12.1
@@ -72,7 +72,7 @@ If any Detectron2 shared objects are found, clean them with:
 
 ```bash
 rm -f detectron2/_C.cpython-37m-*.so detectron2/_C.cpython-38-*.so
-rm -rf build/ detectron2.egg-info build
+rm -rf detectron2.egg-info build
 ```
 
 Build Detectron2 from source:
