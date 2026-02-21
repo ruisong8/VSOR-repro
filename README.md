@@ -132,9 +132,10 @@ to obtain the quantification results only.
 |:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:--------------:|
 | RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.0698 |
 
+For more discussion about the result, please take a look at [this](assets/readme.md) (Uploading soon).
+
 You can download the [checkpoint](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing), [Predicted Images](https://drive.google.com/file/d/1A7wPZRZ5qlZ-rOI568Vutxug8jYMNb-Y/view?usp=sharing), [config](https://drive.google.com/file/d/1BsOBaihtC7Rv4LoHU4qH3EnCEBmFa-N7/view?usp=sharing), [log](https://drive.google.com/file/d/1ZH3PZiLFVKyTKCPNb7QMVshS80MzcL8L/view?usp=sharing), and [TB log](https://drive.google.com/file/d/1jaGgXU17HLTDDLlL_QiwB7wjybFiSmHt/view?usp=sharing).
 
-For more discussion about the result, please refer to [this](assets/readme.md) (Uploading soon).
 
 ## Acknowledgment
 
