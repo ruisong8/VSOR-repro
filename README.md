@@ -8,7 +8,7 @@
 
 This project is based on the NeurIPS 2024 paper:
 
-> *A Motion-aware Spatio-temporal Graph for Video Salient Object Ranking* [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html)
+> *A Motion-aware Spatio-temporal Graph for Video Salient Object Ranking* [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/hash/4fc03d122a7e08d21aa92573113790a3-Abstract-Conference.html) [[Code]](https://github.com/zyf-815/VSOR)
 
 Thanks to the authors for releasing their code.
 
@@ -18,8 +18,6 @@ This repository is created to share the experience and **improve reproducibility
 
 > ⚠️ **Disclaimer**  
 > This is **not an official repository** released by the original authors.
-
-Official Implementation: [[Code]](https://github.com/zyf-815/VSOR)
 
 
 ## TODO
