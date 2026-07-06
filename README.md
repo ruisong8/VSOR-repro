@@ -111,7 +111,7 @@ python tools/plain_train_net_our.py
 
 ## Testing
 
-1. Download the trained model from [Google Drive](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing) and place it into the ``RankSaliency/Models/RVSOD(1)/`` directory.
+1. Download the trained model from [Google Drive](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing) and place it into the ``RankSaliency/Models/RVSOR(1)/`` directory.
 
 2. Run:
 ```
