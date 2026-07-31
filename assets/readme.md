@@ -49,6 +49,11 @@ In RVSOD, pixel values represent ranking relationships rather than absolute sali
 
 This version of MAE is affected by ranking quality.
 
+## MAE(Raw)
+
+Directly calculate the MAE between the predicted maps and ground truth images.
+As the GT does not have the same difference between each rank value, the result is different from MAE(SOR) although both are ranking-based MAE.
+
 ## Which MAE Did the Authors Use? (MAE(Reported))
 
 MAE(SOD) is more consistent with the original baseline implementation and is likely the metric reported in the paper.
