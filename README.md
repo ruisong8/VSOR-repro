@@ -126,9 +126,9 @@ to obtain the quantification results only.
 
 ## Result
 
-| Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | SASOR (Reported) | MAE (SOD) | MAE (SOR) | MAE (Reported) |
-|:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:--------------:|
-| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.0698 |
+| Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | SASOR (Reported) | MAE (SOD) | MAE (SOR) | MAE (Raw) | MAE (Reported) |
+|:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:---------:|:--------------:|
+| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.071 | 0.0698 |
 
 For more discussion about the result, please take a look at [this](assets/readme.md).
 
