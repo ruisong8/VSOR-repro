@@ -128,9 +128,12 @@ to obtain the quantification results only.
 
 | Dataset | SASOR (Original) | Norm. SASOR (Original) | SASOR (All) | Norm. SASOR (All) | SASOR (Reported) | MAE (SOD) | MAE (SOR) | MAE (Raw) | MAE (Reported) |
 |:-------:|:----------------:|:----------------------:|:-----------:|:-----------------:|:----------------:|:---------:|:---------:|:---------:|:--------------:|
-| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0653 | 0.071 | 0.0698 |
+| RVSOD | 0.3908 | 0.6954 | 0.2072 | 0.6036 | 0.603 | 0.0668 | 0.0736 | 0.0824 | 0.0698 |
 
-For more discussion about the result, please take a look at [this](assets/readme.md).
+For more discussion about the results, please take a look at [this](assets/readme.md).
+
+> [!IMPORTANT]
+> Important Update: We identified and fixed a bug in the MAE calculation and have updated the results for both MAE (SOR) and MAE (Raw). The previously reported results can be reproduced using np.abs(pred - gt). Since both pred and gt are stored as uint8, unsigned integer underflow can occur during subtraction (e.g., uint8(0) - uint8(255) = 1), leading to an underestimation of the MAE.
 
 You can download the [checkpoint](https://drive.google.com/file/d/1jtL442Dej4gp-7FOMSxlsJgAn5Pcicdu/view?usp=sharing), [predicted images](https://drive.google.com/file/d/1A7wPZRZ5qlZ-rOI568Vutxug8jYMNb-Y/view?usp=sharing), [config](https://drive.google.com/file/d/1BsOBaihtC7Rv4LoHU4qH3EnCEBmFa-N7/view?usp=sharing), [log](https://drive.google.com/file/d/1ZH3PZiLFVKyTKCPNb7QMVshS80MzcL8L/view?usp=sharing), and [TB log](https://drive.google.com/file/d/1jaGgXU17HLTDDLlL_QiwB7wjybFiSmHt/view?usp=sharing).
 
